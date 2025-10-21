@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+:root {
+	--color-primary-dark: #D3A652;    
+	--color-primary-light: #FFF693;   
+	--color-primary-medium: #F4A261;  
+	--color-black: #000000;           
+	--color-white: #FFFFFF;          
+}
+  
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.lily-font {
+	font-family: 'Lily Script One', cursive;
+}
