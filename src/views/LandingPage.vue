@@ -40,7 +40,6 @@
   	</div>
 	  <section class="py-24 bg-[#ffffff]">
     <div class="container mx-auto px-4">
-      <!-- Título -->
       <div class="max-w-3xl mx-auto text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold text-[#3d2c24] mb-6">
           Nossa Missão
@@ -51,9 +50,7 @@
         </p>
       </div>
 
-      <!-- Valores -->
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Amor e Cuidado -->
         <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-[#e0d4c8]">
           <div class="w-16 h-16 bg-[#f4a261]/10 rounded-full flex items-center justify-center mb-6">
             <HeartIcon class="w-8 h-8 text-[#f4a261]" />
@@ -64,7 +61,6 @@
           </p>
         </div>
 
-        <!-- Lares Responsáveis -->
         <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-[#e0d4c8]">
           <div class="w-16 h-16 bg-[#f4a261]/10 rounded-full flex items-center justify-center mb-6">
             <HomeIcon class="w-8 h-8 text-[#f4a261]" />
@@ -75,7 +71,6 @@
           </p>
         </div>
 
-        <!-- Comunidade Ativa -->
         <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-[#e0d4c8]">
           <div class="w-16 h-16 bg-[#f4a261]/10 rounded-full flex items-center justify-center mb-6">
             <UsersIcon class="w-8 h-8 text-[#f4a261]" />
@@ -86,7 +81,6 @@
           </p>
         </div>
 
-        <!-- Proteção Animal -->
         <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-[#e0d4c8]">
           <div class="w-16 h-16 bg-[#f4a261]/10 rounded-full flex items-center justify-center mb-6">
             <ShieldCheckIcon class="w-8 h-8 text-[#f4a261]" />
@@ -98,7 +92,6 @@
         </div>
       </div>
 
-      <!-- Números fixos -->
       <div class="mt-16 max-w-4xl mx-auto bg-[#fcec15]/40 p-8 md:p-12 rounded-2xl border-2 border-[#f4a261]/30">
         <div class="grid md:grid-cols-3 gap-8 text-center">
           <div>
@@ -119,7 +112,6 @@
   </section>
   <section id="adocao" class="py-24 bg-[#D3A652]">
       <div class="container mx-auto px-4">
-        <!-- Título -->
         <div class="text-center mb-4">
           <p class="text-[#6b5a4d] text-lg mb-2">Ajude um Aumigo</p>
           <h2 class="text-4xl md:text-5xl font-bold text-[#000000]">
@@ -127,7 +119,6 @@
           </h2>
         </div>
 
-        <!-- Grid de animais -->
         <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12">
           <div
             v-for="animal in dogs"
@@ -156,7 +147,6 @@
           </div>
         </div>
 
-        <!-- Indicadores de slide e footer permanecem iguais -->
       </div>
     </section>
 
@@ -192,7 +182,6 @@ export default {
         headers: { Authorization: `Bearer ${this.$store.state.token}` }
       });
       console.log(response.data.data)
-      // Agora data é o array de dogs diretamente
       this.dogs = response.data.data.map(dog => ({
         uuid: dog.uuid,
         name: dog.name,

@@ -3,7 +3,6 @@
 	  <div class="container mx-auto px-4">
 		<div class="grid md:grid-cols-4 gap-12 mb-12">
   
-		  <!-- Sobre -->
 		  <div class="space-y-4">
 			<h3 class="text-2xl font-bold text-primary-light">AdotandoAi</h3>
 			<p class="text-footer-light leading-relaxed">
@@ -34,7 +33,6 @@
 			</div>
 		  </div>
   
-		  <!-- Links rápidos -->
 		  <div>
 			<h4 class="text-lg font-bold mb-6 text-primary-light">Links Rápidos</h4>
 			<ul class="space-y-3">
@@ -46,7 +44,6 @@
 			</ul>
 		  </div>
   
-		  <!-- Apoio -->
 		  <div>
 			<h4 class="text-lg font-bold mb-6 text-primary-light">Apoio</h4>
 			<ul class="space-y-3">
@@ -58,7 +55,6 @@
 			</ul>
 		  </div>
   
-		  <!-- Contato -->
 		  <div>
 			<h4 class="text-lg font-bold mb-6 text-primary-light">Contato</h4>
 			<ul class="space-y-4">

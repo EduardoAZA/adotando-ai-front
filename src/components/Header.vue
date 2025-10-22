@@ -10,7 +10,6 @@
 	  </nav>
   
 	  <div class="actions">
-		<!-- Se estiver logado, mostra nome e dropdown -->
 		<div v-if="isLoggedIn" class="user-menu relative">
 		  <div
 			@click="toggleDropdown"
@@ -19,7 +18,6 @@
 			<span>Olá, {{ firstName }}</span>
 		  </div>
   
-		  <!-- Dropdown -->
 		  <div
 			v-if="dropdownOpen"
 			class="absolute right-0 mt-2 w-48 bg-white p-2 rounded shadow-md z-10"
@@ -28,7 +26,6 @@
 				Perfil
 			</router-link>
 
-			<!-- Mostrar apenas se for empresa -->
 			<router-link
 				v-if="$store.state.isCompany"
 				to="/cachorros"
@@ -46,7 +43,6 @@
 			</div>
 		</div>
   
-		<!-- Se não estiver logado -->
 		<router-link v-else to="/login" class="login-link">
 		  Entrar
 		</router-link>
@@ -87,7 +83,6 @@
 		try {
 		  let res;
   
-		  // Se for empresa, busca no endpoint de company
 		  if (this.$store.state.isCompany === true) {
 			res = await axios.get(
 			  `http://localhost:4200/api/company/${this.$store.state.userId}`,
@@ -98,7 +93,6 @@
 			  }
 			);
 		  } else {
-			// Caso contrário, busca no endpoint de user
 			res = await axios.get(
 			  `http://localhost:4200/api/user/${this.$store.state.userId}`,
 			  {
@@ -109,7 +103,6 @@
 			);
 		  }
   
-		  // Atualiza nome do usuário
 		  this.userName = res.data.data.name || "Usuário";
 		} catch (err) {
 		  console.error("Erro ao buscar nome do usuário:", err);

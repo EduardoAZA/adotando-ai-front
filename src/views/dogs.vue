@@ -2,7 +2,6 @@
 	<div class="min-h-screen bg-gray-100 flex flex-col items-center justify-center py-10">
 	  <div class="max-w-5xl w-full bg-white shadow-sm rounded-2xl p-8 flex flex-col gap-6">
   
-		<!-- Cabeçalho com abas -->
 		<div class="flex justify-between items-center border-b pb-4">
 		  <h1 class="text-4xl font-bold">Gerenciar Cachorros</h1>
 		  <div class="flex gap-2">
@@ -23,7 +22,6 @@
 		  </div>
 		</div>
   
-		<!-- ABA CRIAR -->
 		<div v-if="activeTab === 'create'" class="mt-6">
 		  <h2 class="text-2xl font-semibold mb-4">Adicionar Cachorro</h2>
   
@@ -48,7 +46,6 @@
 			  <option value="unavailable">Indisponível</option>
 			</select>
   
-			<!-- Upload de imagem (arrastar ou clicar) -->
 			<div class="flex gap-2 items-center">
 				<div 
 					class="flex-1 border-2 border-dashed border-gray-300 rounded p-4 text-center cursor-pointer hover:border-blue-400"
@@ -87,7 +84,6 @@
 		  </form>
 		</div>
   
-		<!-- ABA LISTAR -->
 		<div v-else class="mt-6">
 		  <h2 class="text-2xl font-semibold mb-4">Cachorros Cadastrados</h2>
   
@@ -103,7 +99,7 @@
 			>
 			  <img
 				v-if="dog.images && dog.images.length"
-				:src="dog.images[0]"
+				:src="dog.images[0].data"
 				alt="Imagem do cachorro"
 				class="w-full h-48 object-cover rounded"
 			  />
@@ -117,7 +113,6 @@
 		  </div>
 		</div>
   
-		<!-- MODAL DE EDIÇÃO -->
 		<div v-if="modalOpen" class="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
 		  <div class="bg-white rounded-xl w-full max-w-2xl p-6 relative">
 			<button @click="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 font-bold">×</button>
@@ -210,10 +205,9 @@
 		convertToBase64(file) {
 			const reader = new FileReader();
 			reader.onload = (e) => {
-			// Adiciona imagem no formato base64
 			this.dog.images.push(e.target.result);
 			};
-			reader.readAsDataURL(file); // converte em base64
+			reader.readAsDataURL(file); 
 		},
 
 		removeImageUrl(index) {

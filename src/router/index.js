@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import store from '../store' // importa a store do Vuex
+import store from '../store' 
 
 import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
@@ -26,12 +26,11 @@ const router = createRouter({
   routes
 })
 
-// Proteção de rotas privadas
 router.beforeEach((to) => {
-  const token = store.state.token // pega o token direto da store
+  const token = store.state.token 
 
   if (to.meta.requiresAuth && !token) {
-    return '/login' // redireciona se não estiver logado
+    return '/login' 
   }
 })
 

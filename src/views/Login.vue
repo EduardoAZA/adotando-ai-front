@@ -5,7 +5,6 @@
 		<h3 class="text-lg text-left">Seja bem-vindo de volta</h3>
 		<div class="h-[300px]">
 		  <form @submit.prevent="handleLogin" class="flex flex-col h-full gap-4 flex-1 justify-center">
-			<!-- Email -->
 			<div class="flex flex-col">
 			  <label for="email" class="mb-1 font-medium">Email</label>
 			  <input
@@ -17,7 +16,6 @@
 			  />
 			</div>
   
-			<!-- Senha -->
 			<div class="flex flex-col">
 			  <label for="password" class="mb-1 font-medium">Senha</label>
 			  <div class="relative">
@@ -78,7 +76,6 @@
 		try {
 		  const response = await axios.post("http://localhost:4200/api/login", this.form);
   
-		  // Atualiza a store com token e userId
 		  this.$store.dispatch("login", {
 			token: response.data.token,
 			userId: response.data.uuid,

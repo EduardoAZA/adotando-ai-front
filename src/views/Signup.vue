@@ -4,7 +4,6 @@
 		<h2 class="text-3xl font-bold mb-1 text-left">Cadastro</h2>
 		<h3 class="text-lg text-left text-gray-600">Crie sua conta</h3>
   
-		<!-- Seletor Tipo de Usuário -->
 		<div class="flex gap-4 mt-4 mb-6">
 		  <button
 			@click="userType = 'person'"
@@ -22,7 +21,6 @@
 		  </button>
 		</div>
   
-		<!-- Formulário -->
 		<form @submit.prevent="handleRegister" class="flex flex-col gap-4">
 		  <input v-model="form.name" type="text" placeholder="Name" class="input" />
 		  <input v-model="form.email" type="email" placeholder="Email" class="input" />

@@ -1,7 +1,6 @@
 <template>
 	<div class="min-h-screen bg-gradient-to-b  py-10 px-6">
 	  <div class="max-w-5xl mx-auto">
-		<!-- Cabeçalho -->
 		<div class="text-center mb-10">
 		  <h1 class="text-4xl font-bold text-orange-600 mb-2">Adote um Amigo</h1>
 		  <p class="text-gray-600">
@@ -9,20 +8,17 @@
 		  </p>
 		</div>
   
-		<!-- Loading -->
 		<div v-if="loading" class="flex justify-center items-center text-gray-500 py-20">
 		  <ArrowPathIcon class="w-6 h-6 animate-spin mr-2" />
 		  Carregando empresas e cães...
 		</div>
   
-		<!-- Lista de empresas -->
 		<div v-else class="space-y-6">
 		  <div
 			v-for="company in companies"
 			:key="company.uuid"
 			class="border border-orange-100 rounded-xl bg-gradient-to-r from-white to-white shadow-sm"
 		  >
-			<!-- Cabeçalho da empresa -->
 			<button
 			  @click="toggleCompany(company.uuid)"
 			  class="w-full flex justify-between items-center px-6 py-4 text-left focus:outline-none"
@@ -43,7 +39,6 @@
 				</p>
 			  </div>
   
-			  <!-- Ícone do acordeão -->
 			  <ChevronDownIcon
 				:class="[
 				  'w-6 h-6 text-orange-500 transition-transform duration-300',
@@ -52,7 +47,6 @@
 			  />
 			</button>
   
-			<!-- Seção expandida -->
 			<transition name="expand">
 			  <div v-if="expandedCompany === company.uuid" class="px-6 pb-6">
 				<h3 class="text-lg font-semibold text-gray-700 mb-3 border-b border-orange-100 pb-1">
@@ -111,7 +105,7 @@
 	  return {
 		companies: [],
 		loading: true,
-		expandedCompany: null // controla qual está aberta
+		expandedCompany: null 
 	  }
 	},
 	async created() {
@@ -129,7 +123,6 @@
 		  )
 		  const allCompanies = res.data.data.companies
   
-		  // Busca os cães de cada empresa
 		  const withDogs = await Promise.all(
 			allCompanies.map(async company => {
 			  try {

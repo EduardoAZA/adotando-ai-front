@@ -5,7 +5,6 @@
 		<h3 class="text-lg text-left text-gray-600">Seus dados cadastrados</h3>
   
 		<form @submit.prevent="handleUpdateProfile" class="flex flex-col gap-6">
-		  <!-- Documento + Nome -->
 		  <div class="flex gap-2">
 			<input
 			  v-model="form.documento"
@@ -22,7 +21,6 @@
 			/>
 		  </div>
   
-		  <!-- Email + Nascimento -->
 		  <div class="flex gap-2" v-if="!isCompany">
 			<input
 			  v-model="form.email"
@@ -40,7 +38,6 @@
 			/>
 		  </div>
 
-		  <!-- Email (empresa) -->
 		  <div v-else>
 			<input
 			  v-model="form.email"
@@ -51,7 +48,6 @@
 			/>
 		  </div>
   
-		  <!-- Endereço -->
 		  <h4 class="font-semibold text-gray-700">Endereço</h4>
 		  <input v-model="form.cep" type="text" placeholder="CEP" class="bg-gray-100 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
 		  <div class="flex gap-2">
@@ -67,13 +63,11 @@
 			<input v-model="form.complemento" type="text" placeholder="Complemento" class="flex-1 bg-gray-100 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
 		  </div>
   
-		  <!-- DDD + Telefone -->
 		  <div class="flex gap-2">
 			<input v-model="form.ddd" type="text" placeholder="DDD" class="w-1/4 bg-gray-100 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
 			<input v-model="form.telefone" type="text" placeholder="Telefone" class="flex-1 bg-gray-100 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
 		  </div>
   
-		  <!-- Botões -->
 		  <div class="flex  gap-3 mt-6">
 			<button
 			  type="submit"
@@ -219,7 +213,6 @@
   
 		  alert("Conta excluída com sucesso!")
   
-		  // Limpa store e redireciona
 		  this.$store.commit("logout")
 		  this.$router.push("/login")
 		} catch (error) {
